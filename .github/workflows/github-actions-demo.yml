@@ -4,9 +4,9 @@ on: push
 
 jobs:
   my-job:
-    name: My Job
     runs-on: ubuntu-latest
     steps:
+       -name: Test 
         run: |
           if["$SECRET_HELLO" -eq "Hello Gursharn"]
             then 
