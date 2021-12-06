@@ -8,7 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        env:
-          SECRET_HELLO: ${{ secrets.SECRET_HELLO1 }}
-          run: echo "The selected color is ${{ secrets.SECRET_HELLO  }}"
+        run: |
+          if["$SECRET_HELLO" -eq "Hello Gursharn"]
+            then 
+               echo "Got Secret"
+           fi     
+
  
