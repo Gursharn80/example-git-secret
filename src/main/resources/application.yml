@@ -1,4 +1,4 @@
 ######### logging
 env:
-  hello: ${{ secrets.HELLO_SECRET  }}
+  HELLO_SECRET: ${{ secrets.SECRET_HELLO }}
    
