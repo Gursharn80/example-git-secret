@@ -118,9 +118,9 @@ jobs:
 
  
 
-    - name: Build
+    - name: GitHub Actions Demo
 
-      id: build
+      id: GitHub Actions Demo
 
       if: ${{ env.SHOULD_BUILD == true }}
 
