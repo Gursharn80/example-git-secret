@@ -11,6 +11,7 @@ jobs:
           if [ "$SECRET_HELLO" == "Hello" ]
             then 
                echo "Got Secret"
-           fi     
+           fi   
+               echo "No Secret"           
         env:
           HELLO_SECRET: ${{ secrets.SECRET_HELLO }}         
