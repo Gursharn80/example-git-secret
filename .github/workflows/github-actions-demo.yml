@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         env:
-          SECRET_HELLO: ${{ secrets.SECRET_HELLO }}
+          SECRET_HELLO: ${{ secrets.SECRET_HELLO1 }}
           run: echo "The selected color is ${{ secrets.SECRET_HELLO  }}"
  
