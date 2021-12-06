@@ -1,118 +1,17 @@
-# This is a basic workflow that is manually triggered
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-
-# or API.
+name: GitHub Actions Demo
 
 on:
-
   push:
-
-    branches:
-
-    - main
-
-   
-
+    branches: [ $default-branch ]
   pull_request:
-
-    branches:
-
-      - main
-
-
-env:
-
-  appname: example-git-secret
-
-  DEPLOY_SNAPSHOTS: false
-
-  BRANCH_NAME     : ${{ GITHUB.REF }}
-
-  SHOULD_BUILD    : ${{ GITHUB.REF == 'refs/heads/master' }}
-
- 
+    branches: [ $default-branch ]
 
 jobs:
-
-  initialize:
-
-    name: Initialize
-
+  build:
     runs-on: ubuntu-latest
 
-   
-
     steps:
+      - uses: actions/checkout@v2
 
-    - name: Initialize
-
-      run: |
-
-        echo "readMavenPom pom.xml"
-
-        echo "BRANCH: $BRANCH_NAME"
-
-        echo "SHOULD_BUILD: $SHOULD_BUILD"
-
- 
-
-  buildAndTest:
-
-    name: Building code
-
-    runs-on: ubuntu-latest
-
-   
-
-    steps:
-
-    - uses: actions/checkout@v1
-
-   
-
-    - name: Set up JDK 11.0.4
-
-      uses: actions/setup-java@v1
-
-      with:
-
-        java-version: 11.0.4
-
-       
-
-    - name: Set up Maven Settings
-
-      uses: s4u/maven-settings-action@v2.4.0
-
-   
-
- 
-
-    - name: GitHub Actions Demo
-
-      id: GitHub Actions Demo
-
-      if: ${{ env.SHOULD_BUILD == true }}
-
-      run:  |
-
-        echo "Deploy snapshots: $DEPLOY_SNAPSHOTS"
-
-        mvn --batch-mode --update-snapshots compile
-
-           
-
-  staticAnalysis:
-
-    name: Static Analysis
-
-    runs-on: ubuntu-latest
-
-   
-
-    steps:
-
-      - name: Static Analysis
-
-        run: echo "echo 'No static analysis configured for this project'"
+      - name: Run a one-line script
+        run: echo Hello from Octo Organization
