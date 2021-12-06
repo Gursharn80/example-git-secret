@@ -16,11 +16,7 @@ on:
 
     branches:
 
-    - 'feature/**'
-
-    - master
-
-    - develop
+    - main
 
    
 
@@ -28,17 +24,12 @@ on:
 
     branches:
 
-      - develop
+      - main
 
-      - master
-
- 
 
 env:
 
   appname: example-git-secret
-
-  organization: cb
 
   DEPLOY_SNAPSHOTS: false
 
@@ -104,20 +95,6 @@ jobs:
 
  
 
-    - name: Cache Maven packages
-
-      uses: actions/cache@v2
-
-      with:
-
-        path: ~/.m2
-
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-
-        restore-keys: ${{ runner.os }}-m2
-
- 
-
     - name: GitHub Actions Demo
 
       id: GitHub Actions Demo
@@ -130,15 +107,7 @@ jobs:
 
         mvn --batch-mode --update-snapshots compile
 
-       
-
-    - name: JUnit
-
-      id: junit
-
-      run: mvn --batch-mode --update-snapshots test
-
-      
+           
 
   staticAnalysis:
 
