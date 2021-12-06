@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Test 
         run: |
-          if [ "$SECRET_HELLO" -eq "Hello GursharnK" ]
+          if [ "$SECRET_HELLO" == "Hello GursharnK" ]
             then 
                echo "Got Secret"
            fi   
