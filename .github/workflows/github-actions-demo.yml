@@ -7,7 +7,6 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
         run: |
           if["$SECRET_HELLO" -eq "Hello Gursharn"]
             then 
