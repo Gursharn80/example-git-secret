@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Test {
   
   
-  @Value("${env.hello}")
+  @Value("${env.HELLO_SECRET}")
   private String test;
 
 
