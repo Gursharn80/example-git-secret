@@ -1,4 +1,13 @@
-steps:
-  - name: Hello world action
-    with: # Set the secret as an input
-      super_secret: ${{ secrets.SECRET_HELLO }}
+name: GitHub Actions Demo
+
+on: push
+
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        env:
+          SECRET_HELLO: ${{ secrets.SECRET_HELLO }}
+ 
