@@ -13,5 +13,5 @@ jobs:
             then 
                echo "Got Secret"
            fi     
-
- 
+        env:
+          HELLO_SECRET: ${{ secrets.SECRET_HELLO }}         
